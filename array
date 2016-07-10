@@ -1,0 +1,21 @@
+#include<stdio.h>
+void tof(int disk,char source,char temp,char desti);
+int main()
+{
+char source='A',temp='B',desti='c';
+int disk=3;
+printf("seq is:\n");
+tof(disk,source,temp,desti);
+return0;
+}
+void tof(int disk,char source,char temp,char desti)
+{
+if(disk==1)
+{
+printf("move disk %d from %c to %c\n",disk,source,desti);
+return;
+}
+tof(disk-1,source,desti,temp);
+printf("move disk %d from %c to %c\n",disk,source,desti);
+tof(disk-1,temp,source,desti);
+}
